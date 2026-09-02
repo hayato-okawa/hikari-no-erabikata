@@ -1,0 +1,224 @@
+/* ============================================================
+   design tokens
+   theme: 新生活の灯り - 新しい部屋に灯る、最初のあかり
+   ============================================================ */
+:root {
+  --ink: #1b2430;
+  --ink-soft: #262f3d;
+  --paper: #f4f2ec;
+  --paper-dim: #cfd0c8;
+  --amber: #e8a33d;
+  --amber-dim: #c98a2c;
+  --teal: #4c7a79;
+  --grey: #8b93a1;
+  --line: rgba(244, 242, 236, 0.14);
+
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Zen Kaku Gothic New", sans-serif;
+
+  --measure: 34em;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--amber); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+img { max-width: 100%; display: block; }
+
+/* ------------------------------------------------------------
+   header
+   ------------------------------------------------------------ */
+.site-header {
+  padding: 1.6rem 6vw;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+.site-header .logo {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--paper);
+  letter-spacing: 0.02em;
+}
+.site-header nav a {
+  color: var(--grey);
+  margin-left: 1.4rem;
+  font-size: 0.92rem;
+}
+
+/* ------------------------------------------------------------
+   hero
+   ------------------------------------------------------------ */
+.hero {
+  position: relative;
+  padding: 9vw 6vw 7vw;
+  max-width: 46rem;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(232,163,61,0.16) 0%, rgba(232,163,61,0) 70%);
+  pointer-events: none;
+}
+.hero h1 {
+  position: relative;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.5;
+  margin: 0 0 1.1rem;
+}
+.hero p {
+  position: relative;
+  color: var(--paper-dim);
+  max-width: var(--measure);
+  font-size: 1.02rem;
+}
+
+/* ------------------------------------------------------------
+   article list (not numbered - these are not a sequence)
+   ------------------------------------------------------------ */
+.article-list {
+  padding: 0 6vw 8vw;
+  max-width: 52rem;
+}
+.article-list h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.8rem;
+  margin-bottom: 0;
+}
+.article-row {
+  display: flex;
+  gap: 1.6rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.article-row:last-child { border-bottom: none; }
+.article-row .tag {
+  color: var(--teal);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.article-row .title {
+  flex: 1;
+}
+.article-row .title a {
+  color: var(--paper);
+  font-size: 1.08rem;
+}
+.article-row .title a:hover { color: var(--amber); }
+.article-row .dek {
+  color: var(--grey);
+  font-size: 0.88rem;
+  margin-top: 0.35rem;
+}
+
+/* ------------------------------------------------------------
+   article page
+   ------------------------------------------------------------ */
+.article {
+  max-width: var(--measure);
+  padding: 6vw 6vw 10vw;
+}
+.article .eyebrow {
+  color: var(--teal);
+  font-size: 0.86rem;
+}
+.article h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.5;
+  margin: 0.6rem 0 1.6rem;
+}
+.article p { margin: 0 0 1.3rem; color: var(--paper); }
+.article h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin: 2.4rem 0 1rem;
+  color: var(--paper);
+}
+.article ul, .article ol { padding-left: 1.3rem; margin: 0 0 1.3rem; }
+.article li { margin-bottom: 0.5rem; }
+
+.pick-box {
+  background: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--amber);
+  padding: 1.3rem 1.5rem;
+  margin: 1.8rem 0;
+}
+.pick-box .pick-label {
+  color: var(--amber);
+  font-size: 0.82rem;
+  margin-bottom: 0.4rem;
+}
+.pick-box a.buy {
+  display: inline-block;
+  margin-top: 0.6rem;
+  color: var(--ink);
+  background: var(--amber);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  border-radius: 2px;
+}
+.pick-box a.buy:hover { background: var(--amber-dim); text-decoration: none; }
+
+.disclosure {
+  color: var(--grey);
+  font-size: 0.82rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.2rem;
+  margin-top: 3rem;
+}
+
+/* ------------------------------------------------------------
+   footer
+   ------------------------------------------------------------ */
+.site-footer {
+  padding: 2.5rem 6vw;
+  border-top: 1px solid var(--line);
+  color: var(--grey);
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+}
+.site-footer a { color: var(--grey); }
+.site-footer a:hover { color: var(--amber); }
+
+@media (max-width: 640px) {
+  .site-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .site-header nav a { margin-left: 0; margin-right: 1.2rem; }
+  .article-row { flex-direction: column; gap: 0.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

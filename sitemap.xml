@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.github.io/</loc>
+  </url>
+  <url>
+    <loc>https://example.github.io/about.html</loc>
+  </url>
+  <url>
+    <loc>https://example.github.io/privacy-policy.html</loc>
+  </url>
+  <url>
+    <loc>https://example.github.io/articles/refrigerator-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://example.github.io/articles/washing-machine-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://example.github.io/articles/microwave-guide.html</loc>
+  </url>
+</urlset>
